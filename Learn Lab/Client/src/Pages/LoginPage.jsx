@@ -20,7 +20,9 @@ const LoginPage = () => {
 const handleLogin = () => {
   //  add login logic here
   // navigate("/student");
-  navigate("/instructor");
+  // navigate("/instructor");
+  navigate("/industoryExpert");
+
 };
   return (
     <div>
