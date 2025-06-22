@@ -36,6 +36,7 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ message: 'Something went wrong!' });
 });
-
-// ✅ Export app for Vercel
-module.exports = app;
+console.log("💡 API HIT:", new Date().toISOString());
+module.exports = (req, res) => {
+  return app(req, res);
+};
