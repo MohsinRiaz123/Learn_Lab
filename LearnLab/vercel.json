@@ -12,17 +12,8 @@
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "server/api/index.js"
-    },
-    {
-      "src": "/uploads/(.*)",
-      "dest": "server/api/index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/Client/build/index.html"
-    }
+    { "src": "/api/(.*)", "dest": "server/api/index.js" },
+    { "src": "/uploads/(.*)", "dest": "server/api/index.js" },
+    { "src": "/(.*)", "dest": "/Client/build/index.html" }
   ]
 }

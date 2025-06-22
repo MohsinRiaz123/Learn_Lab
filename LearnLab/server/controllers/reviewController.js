@@ -1,21 +1,46 @@
 const Review = require('../models/Review');
 
 exports.getStudentReviews = async (req, res) => {
-    try {
-        const reviews = await Review.find()
-            .populate('student', 'name')
-            .sort({ createdAt: -1 })
-            .limit(15);
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
 
-        const formattedReviews = reviews.map(review => ({
-            studentId: review.student._id,
-            studentImg: `https://ui-avatars.com/api/?name=${encodeURIComponent(review.student.name)}&background=random`,
-            studentName: review.student.name,
-            ReviewMassage: review.message
-        }));
+    const reviews = await Review.find()
+      .populate('student', 'name profileImage')
+      .populate('course', 'name')
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit);
 
-        res.json(formattedReviews);
-    } catch (error) {
-        res.status(500).json({ message: 'Error fetching reviews', error: error.message });
-    }
-}; 
+    const totalReviews = await Review.countDocuments();
+    const totalPages = Math.ceil(totalReviews / limit);
+
+    // Calculate average rating
+    const avgRatingResult = await Review.aggregate([
+      {
+        $group: {
+          _id: null,
+          averageRating: { $avg: '$rating' }
+        }
+      }
+    ]);
+
+    const averageRating = avgRatingResult[0]?.averageRating || 0;
+
+    res.status(200).json({
+      success: true,
+      count: reviews.length,
+      totalReviews,
+      totalPages,
+      currentPage: page,
+      averageRating: parseFloat(averageRating.toFixed(2)),
+      data: reviews
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+  }
+};

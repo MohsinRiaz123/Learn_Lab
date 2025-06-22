@@ -7,25 +7,23 @@ const contactController = require('../controllers/contactController');
 const authController = require('../controllers/authController');
 const { protect, authorize } = require('../middleware/auth');
 
-// Auth routes
+// Public routes
 router.post('/register', authController.register);
 router.post('/login', authController.login);
 
 // Protected routes
 router.use(protect);
 
-// Stats route (admin only)
+// Stats route (instructor only)
 router.get('/stats', authorize('instructor'), statsController.getStats);
 
-// Top courses route (public)
+// Course routes
 router.get('/TopCourses', courseController.getTopCourses);
 
-// Student reviews route (public)
+// Review routes
 router.get('/studentReviews', reviewController.getStudentReviews);
 
-// Contact form route (public)
+// Contact route
 router.post('/contact', contactController.submitContact);
 
-module.exports = router; 
-
-
+module.exports = router;
