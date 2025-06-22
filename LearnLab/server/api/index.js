@@ -1,3 +1,6 @@
-const app = require('../index');
+const app = require('../app');
 
-module.exports = (req, res) => app(req, res);
+// Export the serverless function handler
+module.exports = (req, res) => {
+  return app(req, res);
+};

@@ -11,6 +11,15 @@ const { protect, authorize } = require('../middleware/auth');
 router.post('/register', authController.register);
 router.post('/login', authController.login);
 
+// Test route
+router.get('/test', (req, res) => {
+  res.json({ 
+    message: 'API is working!', 
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development'
+  });
+});
+
 // Protected routes
 router.use(protect);
 

@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "Client/package.json",
+      "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": { "distDir": "build" }
     },
@@ -14,6 +14,6 @@
   "routes": [
     { "src": "/api/(.*)", "dest": "server/api/index.js" },
     { "src": "/uploads/(.*)", "dest": "server/api/index.js" },
-    { "src": "/(.*)", "dest": "/Client/build/index.html" }
+    { "src": "/(.*)", "dest": "client/build/index.html" }
   ]
 }
