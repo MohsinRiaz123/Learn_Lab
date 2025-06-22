@@ -5,6 +5,7 @@ const cors = require('cors');
 const apiRoutes = require('./routes/api');
 const path = require('path');
 
+// Create Express app
 const app = express();
 
 // Middleware
@@ -14,32 +15,34 @@ app.use(express.json());
 // Serve uploaded files
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/llbe')
-    .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.error('MongoDB connection error:', err));
+// MongoDB Connection (outside of function to avoid re-connecting every time)
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/llbe', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(() => {
+    console.log('Connected to MongoDB');
+}).catch((err) => {
+    console.error('MongoDB connection error:', err);
+});
 
 // Routes
 app.use('/api', apiRoutes);
 
-// Health check route
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'ok' });
 });
+
 app.get('/', (req, res) => {
-   res.send({
-    activeStatus:true,
-    error:false,
-   })
+    res.send({
+        activeStatus: true,
+        error: false,
+    });
 });
 
-// Error handling middleware
+// Error handling
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ message: 'Something went wrong!' });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-}); 
+module.exports = app;
