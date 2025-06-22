@@ -21,7 +21,6 @@ import InsQuizAttempts from "./Pages/Instructor/QuizAttempt";
 import InsEnrolledCourses from "./Pages/Instructor/EnrolledCourses";
 import InsSetting from "./Pages/Instructor/Setting";
 import CreateCourse from "./Pages/Instructor/CreateCourse";
-import { Sidebar } from "./Components/sidebar";
 import Dashboard from "./Pages/Dashboard";
 import Profile from "./Pages/Profile";
 import Projects from "./Pages/Projects";

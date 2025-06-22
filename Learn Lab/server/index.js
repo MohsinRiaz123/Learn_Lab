@@ -26,6 +26,12 @@ app.use('/api', apiRoutes);
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'ok' });
 });
+app.get('/', (req, res) => {
+   res.send({
+    activeStatus:true,
+    error:false,
+   })
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
