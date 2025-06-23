@@ -5,14 +5,14 @@ export function Sidebar() {
   const location = useLocation()
 
   const menuItems = [
-    { href: "/industoryExpert", label: "Dashboard", icon: MdDashboard },
-    { href: "/industoryExpert/profile", label: "My Profile", icon: MdPerson },
-    { href: "/industoryExpert/projects", label: "Project Evaluations", icon: MdAssignment },
-    { href: "/industoryExpert/feedback", label: "Learner Feedback", icon: MdEdit },
-    { href: "/industoryExpert/courses", label: "Courses", icon: MdBook },
-    { href: "/industoryExpert/messages", label: "Messages", icon: MdMessage },
-    { href: "/industoryExpert/recommendations", label: "Recommendations", icon: MdEdit },
-    { href: "/industoryExpert/settings", label: "Settings", icon: MdSettings },
+    { href: "/", label: "Dashboard", icon: MdDashboard },
+    { href: "/profile", label: "My Profile", icon: MdPerson },
+    { href: "/projects", label: "Project Evaluations", icon: MdAssignment },
+    { href: "/feedback", label: "Learner Feedback", icon: MdEdit },
+    { href: "/courses", label: "Courses", icon: MdBook },
+    { href: "/messages", label: "Messages", icon: MdMessage },
+    { href: "/recommendations", label: "Recommendations", icon: MdEdit },
+    { href: "/settings", label: "Settings", icon: MdSettings },
   ]
 
   return (

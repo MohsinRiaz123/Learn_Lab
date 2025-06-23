@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import HomePage from "./Pages/HomePage";
 import AboutUS from "./Pages/AboutUS";
 import ContactUs from "./Pages/ContactUs";
@@ -21,15 +22,15 @@ import InsQuizAttempts from "./Pages/Instructor/QuizAttempt";
 import InsEnrolledCourses from "./Pages/Instructor/EnrolledCourses";
 import InsSetting from "./Pages/Instructor/Setting";
 import CreateCourse from "./Pages/Instructor/CreateCourse";
-import Dashboard from "./Pages/Dashboard";
-import Profile from "./Pages/Profile";
-import Projects from "./Pages/Projects";
-import Messages from "./Pages/Messages";
-import Courses from "./Pages/Courses";
-import Feedback from "./Pages/Feedback";
-import Recommendations from "./Pages/Recommendations";
-import Settings from "./Pages/Settings";
-import "./App.css";
+import Dashboard from "./Pages/Industryexpert/Dashboard"
+import Profile from "./Pages/Industryexpert/Profile"
+import Projects from "./Pages/Industryexpert/Projects"
+import Messages from "./Pages/Industryexpert/Messages"
+import Courses from "./Pages/Industryexpert/Courses"
+import Feedback from "./Pages/Industryexpert/Feedback"
+import Recommendations from "./Pages/Industryexpert/Recommendations"
+import Settings from "./Pages/Industryexpert/Settings"
+import "./App.css"
 import IndustoryExpertLayout from "./UI/IndustoryExpertLayout";
 function App() {
   return (
