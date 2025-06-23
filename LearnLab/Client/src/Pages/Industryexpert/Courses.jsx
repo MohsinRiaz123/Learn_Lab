@@ -1,5 +1,5 @@
-import { CoursesList } from "../Components/courses-list"
-import { CourseStats } from "../Components/course-stats"
+import { CoursesList } from "../../Components/courses-list"
+import { CourseStats } from "../../Components/course-stats"
 
 export default function Courses() {
   return (

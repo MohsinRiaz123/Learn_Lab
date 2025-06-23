@@ -1,4 +1,4 @@
-import { MessagingInterface } from "../Components/messaging-interface"
+import { MessagingInterface } from "../../Components/messaging-interface"
 
 export default function Messages() {
   return (

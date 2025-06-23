@@ -1,8 +1,8 @@
-import { DashboardHeader } from "../Components/dashboard-header"
-import { DashboardStats } from "../Components/dashboard-stats"
-import { ProjectsToReview } from "../Components/projects-to-review"
-import { RecentMessages } from "../Components/recent-messages"
-import { CourseRecommendations } from "../Components/course-recommendations"
+import { DashboardHeader } from "../../Components/dashboard-header"
+import { DashboardStats } from "../../Components/dashboard-stats"
+import { ProjectsToReview } from "../../Components/projects-to-review"
+import { RecentMessages } from "../../Components/recent-messages"
+import { CourseRecommendations } from "../../Components/course-recommendations"
 
 export default function Dashboard() {
   return (

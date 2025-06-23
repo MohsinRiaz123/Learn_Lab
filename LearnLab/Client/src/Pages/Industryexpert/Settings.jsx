@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { PageHeader } from "../Components/page-header"
-import { TabNavigation } from "../Components/tab-navigation"
-import { CardWrapper } from "../Components/card-wrapper"
-import { SettingsForm } from "../Components/settings-form"
+import { PageHeader } from "../../Components/page-header"
+import { TabNavigation } from "../../Components/tab-navigation"
+import { CardWrapper } from "../../Components/card-wrapper"
+import { SettingsForm } from "../../Components/settings-form"
 
 export default function Settings() {
   const [activeTab, setActiveTab] = useState("profile")

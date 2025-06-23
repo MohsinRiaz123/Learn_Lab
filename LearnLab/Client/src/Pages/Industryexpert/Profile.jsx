@@ -1,6 +1,6 @@
-import { ProfileInfo } from "../Components/profile-info"
-import { ExpertiseAreas } from "../Components/expertise-areas"
-import { ProfileStats } from "../Components/profile-stats"
+import { ProfileInfo } from "../../Components/profile-info"
+import { ExpertiseAreas } from "../../Components/expertise-areas"
+import { ProfileStats } from "../../Components/profile-stats"
 
 export default function Profile() {
   return (

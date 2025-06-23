@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { PageHeader } from "../Components/page-header"
-import { TabNavigation } from "../Components/tab-navigation"
-import { ProjectEvaluationList } from "../Components/project-evaluation-list"
+import { PageHeader } from "../../Components/page-header"
+import { TabNavigation } from "../../Components/tab-navigation"
+import { ProjectEvaluationList } from "../../Components/project-evaluation-list"
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState("pending")

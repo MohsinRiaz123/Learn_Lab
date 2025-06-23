@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import HomePage from "./Pages/HomePage";
-import AboutUS from "./Pages/AboutUS";
-import ContactUs from "./Pages/ContactUs";
-import LoginPage from "./Pages/LoginPage";
-import StudentSignup from "./Pages/StudentSignup";
-import InstructorSignup from "./Pages/InstructorSignup";
-import ForgotPassword from "./Pages/ForgotPassword";
+import HomePage from "./Pages/LandingPages/HomePage";
+import AboutUS from "./Pages/LandingPages/AboutUS";
+import ContactUs from "./Pages/LandingPages/ContactUs";
+import LoginPage from "./Pages/LandingPages/LoginPage";
+import StudentSignup from "./Pages/LandingPages/StudentSignup";
+import InstructorSignup from "./Pages/LandingPages/InstructorSignup";
+import ForgotPassword from "./Pages/LandingPages/ForgotPassword";
 import StudentDashboardLayout from "./UI/StudentDashboardLayout";
 import StudentDashboard from "./Pages/Student/Dashboard";
 import MyProfile from "./Pages/Student/Profile";

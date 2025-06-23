@@ -1,9 +1,9 @@
 import { useState } from "react"
-import { PageHeader } from "../Components/page-header"
-import { TabNavigation } from "../Components/tab-navigation"
-import { CardWrapper } from "../Components/card-wrapper"
-import { CourseRecommendationForm } from "../Components/course-recommendation-form"
-import { RecommendationsList } from "../Components/recommendations-list"
+import { PageHeader } from "../../Components/page-header"
+import { TabNavigation } from "../../Components/tab-navigation"
+import { CardWrapper } from "../../Components/card-wrapper"
+import { CourseRecommendationForm } from "../../Components/course-recommendation-form"
+import { RecommendationsList } from "../../Components/recommendations-list"
 
 export default function Recommendations() {
   const [activeTab, setActiveTab] = useState("recommendations")

@@ -56,6 +56,8 @@ app.use('/api', apiRoutes);
 
 // Health check
 app.get('/health', (req, res) => res.status(200).json({ status: 'ok' }));
+
+
 app.get('/', (req, res) => res.json({ activeStatus: true, error: false }));
 
 // 404 handler

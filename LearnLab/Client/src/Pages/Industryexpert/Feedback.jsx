@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { PageHeader } from "../Components/page-header"
-import { TabNavigation } from "../Components/tab-navigation"
-import { FeedbackList } from "../Components/feedback-list"
+import { PageHeader } from "../../Components/page-header"
+import { TabNavigation } from "../../Components/tab-navigation"
+import { FeedbackList } from "../../Components/feedback-list"
 
 export default function Feedback() {
   const [activeTab, setActiveTab] = useState("pending")
