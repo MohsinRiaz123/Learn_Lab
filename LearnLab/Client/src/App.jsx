@@ -10,6 +10,8 @@ import ForgotPassword from "./Pages/LandingPages/ForgotPassword";
 import StudentDashboardLayout from "./UI/StudentDashboardLayout";
 import StudentDashboard from "./Pages/Student/Dashboard";
 import MyProfile from "./Pages/Student/Profile";
+import CourseDetail from "./Pages/Student/CourseDetailes";
+import Learning from "./Pages/Student/LearningScreen";
 import DashboardPage from "./Pages/Admin/DashboardPage";
 import CoursesPage from "./Pages/Admin/CoursesPage";
 import StudentsPage from "./Pages/Admin/StudentsPage";
@@ -64,6 +66,8 @@ function App() {
             <Route path="quizzes" element={<QuizAttempts />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="setting" element={<Setting />} />
+            <Route path="course" element={<CourseDetail/>} />
+            <Route path="learning" element={<Learning />} />
           </Route>
 
           {/* ---------------Instructor dashboard Routing ------------------------- */}

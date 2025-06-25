@@ -6,12 +6,12 @@ import {
   FaComment,
   FaStar,
 } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 import itc from "../../assets/Images/ITC.png";
 import oop from "../../assets/Images/oop.png";
 import pf from "../../assets/Images/pf.png";
 
-const tabs = ["Enrolled Courses", "Active Courses", "Completed Courses"];
+const tabs = ["Enrolled Courses", "Completed Courses"];
 
 const enrolledCourses = [
   {
@@ -23,7 +23,6 @@ const enrolledCourses = [
     author: "Alice",
     rating: 4.6,
     complete: 20,
-    stats: { lessons: 15, time: "8h 30m", comments: 18 },
   },
   {
     id: 2,
@@ -34,22 +33,21 @@ const enrolledCourses = [
     author: "Bob",
     rating: 4.8,
     complete: 60,
-    stats: { lessons: 25, time: "16h 15m", comments: 32 },
   },
 ];
 
-const activeCourses = [
-  {
-    id: 1,
-    title: "Python Fundamentals",
-    category: "Development",
-    image: pf,
-    tags: ["Intermediate", "Python"],
-    author: "Charlie",
-    rating: 4.7,
-    stats: { lessons: 12, time: "10h 20m", comments: 20 },
-  },
-];
+// const activeCourses = [
+//   {
+//     id: 1,
+//     title: "Python Fundamentals",
+//     category: "Development",
+//     image: pf,
+//     tags: ["Intermediate", "Python"],
+//     author: "Charlie",
+//     rating: 4.7,
+//     stats: { lessons: 12, time: "10h 20m", comments: 20 },
+//   },
+// ];
 
 const completedCourses = [
   {
@@ -61,7 +59,6 @@ const completedCourses = [
     author: "Wilson",
     rating: 4.5,
     complete: 100,
-    stats: { lessons: 60, time: "70h 45m", comments: 202 },
   },
   {
     id: 2,
@@ -72,7 +69,6 @@ const completedCourses = [
     author: "Warren",
     rating: 4.5,
     complete: 100,
-    stats: { lessons: 8, time: "18h 20m", comments: 66 },
   },
   {
     id: 3,
@@ -83,17 +79,16 @@ const completedCourses = [
     author: "David Millar",
     rating: 4.5,
     complete: 100,
-    stats: { lessons: 5, time: "11h 20m", comments: 22 },
   },
 ];
 
 const EnrolledCourses = () => {
   const [activeTab, setActiveTab] = useState("Enrolled Courses");
-
+  const navigate = useNavigate();
   const getCourses = () => {
     switch (activeTab) {
-      case "Active Courses":
-        return activeCourses;
+      // case "Active Courses":
+      //   return activeCourses;
       case "Completed Courses":
         return completedCourses;
       case "Enrolled Courses":
@@ -130,7 +125,14 @@ const EnrolledCourses = () => {
         {courses.map((course) => (
           <div
             key={course.id}
-            className="border border-gray-300 rounded-xl overflow-hidden shadow-sm bg-white"
+            className={`border border-gray-300 rounded-xl overflow-hidden shadow-sm bg-white ${
+              activeTab !== "Completed Courses"
+                ? "cursor-pointer hover:shadow-md"
+                : ""
+            }`}
+            onClick={() =>
+              activeTab !== "Completed Courses" && navigate("/student/learning")
+            }
           >
             <img
               src={course.image}
@@ -151,7 +153,6 @@ const EnrolledCourses = () => {
                 <FaStar className="ml-4 text-yellow-500" />
                 <span>({course.rating} Reviews)</span>
               </div>
-
               {/* Progress */}
               {activeTab !== "Active Courses" && (
                 <>
@@ -164,19 +165,6 @@ const EnrolledCourses = () => {
                   </div>
                 </>
               )}
-
-              {/* Stats */}
-              <div className="flex justify-between text-sm text-gray-600 mt-2 border-t pt-3">
-                <div className="flex items-center gap-1">
-                  <FaClipboardList /> {course.stats.lessons}
-                </div>
-                <div className="flex items-center gap-1">
-                  <FaClock /> {course.stats.time}
-                </div>
-                <div className="flex items-center gap-1">
-                  <FaComment /> {course.stats.comments}
-                </div>
-              </div>
             </div>
           </div>
         ))}
