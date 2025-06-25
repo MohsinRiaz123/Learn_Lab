@@ -10,6 +10,16 @@ import ForgotPassword from "./Pages/ForgotPassword";
 import StudentDashboardLayout from "./UI/StudentDashboardLayout";
 import StudentDashboard from "./Pages/Student/Dashboard";
 import MyProfile from "./Pages/Student/Profile";
+import { Sidebar } from "./components/Sidebar"
+import { Header } from "./components/Header"
+import { DashboardPage } from "./pages/Admin/DashboardPage"
+import { CoursesPage } from "./pages/Admin/CoursesPage"
+import { StudentsPage } from "./pages/Admin/StudentsPage"
+import { InstructorsPage } from "./pages/Admin/InstructorsPage"
+import { AnalyticsPage } from "./pages/Admin/AnalyticsPage"
+import { NotificationsPage } from "./pages/Admin/NotificationsPage"
+import { ReportsPage } from "./pages/Admin/ReportsPage"
+import { SettingsPage } from "./pages/Admin/SettingsPage"
 import Reviews from "./Pages/Student/Reviews";
 import QuizAttempts from "./Pages/Student/QuizAttempt";
 import EnrolledCourses from "./Pages/Student/EnrolledCourses";
@@ -32,6 +42,8 @@ import Recommendations from "./Pages/Industryexpert/Recommendations"
 import Settings from "./Pages/Industryexpert/Settings"
 import "./App.css"
 import IndustoryExpertLayout from "./UI/IndustoryExpertLayout";
+import AdminLayout from "./UI/AdminLayout";
+
 function App() {
   return (
     <Router>
@@ -80,6 +92,21 @@ function App() {
             <Route path="recommendations" element={<Recommendations />} />
             <Route path="settings" element={<Settings />} />
           </Route>
+
+          {/* ---------------Admin dashboard Routing ------------------------- */}
+
+          <Route path="/Admin" element={<AdminLayout />}></Route>
+          <Route index element={<DashboardPage />} />
+
+
+          <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/students" element={<StudentsPage />} />
+          <Route path="/instructors" element={<InstructorsPage />} />
+          <Route path="/analytics" element={<AnalyticsPage />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
+          <Route path="/reports" element={<ReportsPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+
         </Routes>
       </div>
     </Router>
