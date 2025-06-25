@@ -1,6 +1,7 @@
-import { StudentManagement } from "../components/StudentManagement"
+import { StudentManagement } from "../../components/StudentManagement"
+import React from 'react'
 
-export function StudentsPage() {
+const StudentsPage = () => {
   return (
     <div className="space-y-6">
       <div>
@@ -12,3 +13,6 @@ export function StudentsPage() {
     </div>
   )
 }
+
+export default StudentsPage
+

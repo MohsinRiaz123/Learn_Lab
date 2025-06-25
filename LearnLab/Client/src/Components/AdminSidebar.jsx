@@ -1,17 +1,18 @@
 import { Link, useLocation } from "react-router-dom"
-
+import { FiLogOut } from "react-icons/fi"
 export function Sidebar() {
   const location = useLocation()
 
   const menuItems = [
-    { path: "/", label: "Dashboard", icon: "📊" },
-    { path: "/courses", label: "Courses", icon: "📚" },
-    { path: "/students", label: "Students", icon: "👥" },
-    { path: "/instructors", label: "Instructors", icon: "👨‍🏫" },
-    { path: "/analytics", label: "Analytics", icon: "📈" },
-    { path: "/notifications", label: "Notifications", icon: "🔔" },
-    { path: "/reports", label: "Reports", icon: "📄" },
-    { path: "/settings", label: "Settings", icon: "⚙️" },
+    { path: "/Admin", label: "Dashboard", icon: "📊" },
+    { path: "/Admin/courses", label: "Courses", icon: "📚" },
+    { path: "/Admin/students", label: "Students", icon: "👥" },
+    { path: "/Admin/instructors", label: "Instructors", icon: "👨‍🏫" },
+    { path: "/Admin/analytics", label: "Analytics", icon: "📈" },
+    { path: "/Admin/notifications", label: "Notifications", icon: "🔔" },
+    { path: "/Admin/reports", label: "Reports", icon: "📄" },
+    { path: "/Admin/settings", label: "Settings", icon: "⚙️" },
+    { path: "/", label: "Logout", icon: <FiLogOut/> },
   ]
 
   return (

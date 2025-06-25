@@ -1,10 +1,11 @@
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "../components/Card"
-import { Switch } from "../components/Switch"
-import { Label } from "../components/Label"
-import { Button } from "../components/Button"
+import { Card, CardContent, CardHeader, CardTitle } from "../../components/Card"
+import { Switch } from "../../components/Switch"
+import { Label } from "../../components/Label"
+import { Button } from "../../components/Button"
+import React from 'react'
 
-export function NotificationsPage() {
+const NotificationsPage = () => {
   const [settings, setSettings] = useState({
     emailNotifications: true,
     pushNotifications: false,
@@ -117,3 +118,7 @@ export function NotificationsPage() {
     </div>
   )
 }
+
+export default NotificationsPage
+
+

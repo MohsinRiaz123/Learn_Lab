@@ -1,12 +1,13 @@
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "../components/Card"
-import { Button } from "../components/Button"
-import { Badge } from "../components/Badge"
-import { Input } from "../components/Input"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../components/Table"
+import { Card, CardContent, CardHeader, CardTitle } from "../../components/Card"
+import { Button } from "../../components/Button"
+import { Badge } from "../../components/Badge"
+import { Input } from "../../components/Input"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../components/Table"
+import React from 'react'
 
-export function InstructorsPage() {
-  const [searchTerm, setSearchTerm] = useState("")
+const InstructorsPage = () => {
+   const [searchTerm, setSearchTerm] = useState("")
   const [instructors, setInstructors] = useState([
     {
       id: 1,
@@ -74,9 +75,8 @@ export function InstructorsPage() {
     }
     return <Badge variant={variants[status]}>{status}</Badge>
   }
-
   return (
-    <div className="space-y-6">
+     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Instructor Management</h1>
         <p className="text-gray-600">Manage instructor applications and accounts</p>
@@ -142,3 +142,6 @@ export function InstructorsPage() {
     </div>
   )
 }
+
+export default InstructorsPage
+

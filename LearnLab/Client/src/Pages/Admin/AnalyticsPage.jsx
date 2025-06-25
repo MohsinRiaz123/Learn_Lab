@@ -1,13 +1,13 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../components/Card"
 
-export function AnalyticsPage() {
-  const metrics = [
+import { Card, CardContent, CardHeader, CardTitle } from "../../components/Card"
+const AnalyticsPage = () => {
+   const metrics = [
     { title: "Total Revenue", value: "$125,430", change: "+12.5%", trend: "up" },
     { title: "Course Completions", value: "1,247", change: "+8.2%", trend: "up" },
     { title: "Active Users", value: "3,891", change: "+15.3%", trend: "up" },
     { title: "Avg. Session Time", value: "24m 32s", change: "-2.1%", trend: "down" },
   ]
-
+  
   return (
     <div className="space-y-6">
       <div>
@@ -89,3 +89,6 @@ export function AnalyticsPage() {
     </div>
   )
 }
+
+export default AnalyticsPage
+

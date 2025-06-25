@@ -1,18 +1,23 @@
 import { Link, useLocation } from "react-router-dom"
 import { MdDashboard, MdBook, MdAssignment, MdMessage, MdSettings, MdLogout, MdPerson, MdEdit } from "react-icons/md"
-
+import { useNavigate } from "react-router-dom";
 export function Sidebar() {
   const location = useLocation()
+ const navigate = useNavigate();
 
+  const handleLogout = () => {
+    // Optionally clear auth tokens here
+    navigate("/"); // Navigate to main page
+  };
   const menuItems = [
-    { href: "/", label: "Dashboard", icon: MdDashboard },
-    { href: "/profile", label: "My Profile", icon: MdPerson },
-    { href: "/projects", label: "Project Evaluations", icon: MdAssignment },
-    { href: "/feedback", label: "Learner Feedback", icon: MdEdit },
-    { href: "/courses", label: "Courses", icon: MdBook },
-    { href: "/messages", label: "Messages", icon: MdMessage },
-    { href: "/recommendations", label: "Recommendations", icon: MdEdit },
-    { href: "/settings", label: "Settings", icon: MdSettings },
+    { href: "/industoryExpert", label: "Dashboard", icon: MdDashboard },
+    { href: "/industoryExpert/profile", label: "My Profile", icon: MdPerson },
+    { href: "/industoryExpert/projects", label: "Project Evaluations", icon: MdAssignment },
+    { href: "/industoryExpert/feedback", label: "Learner Feedback", icon: MdEdit },
+    { href: "/industoryExpert/courses", label: "Courses", icon: MdBook },
+    { href: "/industoryExpert/messages", label: "Messages", icon: MdMessage },
+    { href: "/industoryExpert/recommendations", label: "Recommendations", icon: MdEdit },
+    { href: "/industoryExpert/settings", label: "Settings", icon: MdSettings },
   ]
 
   return (
@@ -44,7 +49,7 @@ export function Sidebar() {
       <div className="p-4 border-t">
         <button className="w-full flex items-center justify-start gap-2 px-3 py-2 text-red-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
           <MdLogout className="h-5 w-5" />
-          <span>Log Out</span>
+          <span  onClick={handleLogout}>Log Out</span>
         </button>
       </div>
     </div>

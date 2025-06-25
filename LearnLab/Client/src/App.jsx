@@ -10,16 +10,14 @@ import ForgotPassword from "./Pages/LandingPages/ForgotPassword";
 import StudentDashboardLayout from "./UI/StudentDashboardLayout";
 import StudentDashboard from "./Pages/Student/Dashboard";
 import MyProfile from "./Pages/Student/Profile";
-import { Sidebar } from "./components/Sidebar"
-import { Header } from "./components/Header"
-import { DashboardPage } from "./pages/Admin/DashboardPage"
-import { CoursesPage } from "./pages/Admin/CoursesPage"
-import { StudentsPage } from "./pages/Admin/StudentsPage"
-import { InstructorsPage } from "./pages/Admin/InstructorsPage"
-import { AnalyticsPage } from "./pages/Admin/AnalyticsPage"
-import { NotificationsPage } from "./pages/Admin/NotificationsPage"
-import { ReportsPage } from "./pages/Admin/ReportsPage"
-import { SettingsPage } from "./pages/Admin/SettingsPage"
+import DashboardPage from "./Pages/Admin/DashboardPage";
+import CoursesPage from "./Pages/Admin/CoursesPage";
+import StudentsPage from "./Pages/Admin/StudentsPage";
+import InstructorsPage from "./Pages/Admin/InstructorsPage";
+import AnalyticsPage from "./Pages/Admin/AnalyticsPage";
+import NotificationsPage from "./Pages/Admin/NotificationsPage";
+import ReportsPage from "./Pages/Admin/ReportsPage";
+import SettingsPage from "./Pages/Admin/SettingsPage";
 import Reviews from "./Pages/Student/Reviews";
 import QuizAttempts from "./Pages/Student/QuizAttempt";
 import EnrolledCourses from "./Pages/Student/EnrolledCourses";
@@ -32,15 +30,15 @@ import InsQuizAttempts from "./Pages/Instructor/QuizAttempt";
 import InsEnrolledCourses from "./Pages/Instructor/EnrolledCourses";
 import InsSetting from "./Pages/Instructor/Setting";
 import CreateCourse from "./Pages/Instructor/CreateCourse";
-import Dashboard from "./Pages/Industryexpert/Dashboard"
-import Profile from "./Pages/Industryexpert/Profile"
-import Projects from "./Pages/Industryexpert/Projects"
-import Messages from "./Pages/Industryexpert/Messages"
-import Courses from "./Pages/Industryexpert/Courses"
-import Feedback from "./Pages/Industryexpert/Feedback"
-import Recommendations from "./Pages/Industryexpert/Recommendations"
-import Settings from "./Pages/Industryexpert/Settings"
-import "./App.css"
+import Dashboard from "./Pages/Industryexpert/Dashboard";
+import Profile from "./Pages/Industryexpert/Profile";
+import Projects from "./Pages/Industryexpert/Projects";
+import Messages from "./Pages/Industryexpert/Messages";
+import Courses from "./Pages/Industryexpert/Courses";
+import Feedback from "./Pages/Industryexpert/Feedback";
+import Recommendations from "./Pages/Industryexpert/Recommendations";
+import Settings from "./Pages/Industryexpert/Settings";
+import "./App.css";
 import IndustoryExpertLayout from "./UI/IndustoryExpertLayout";
 import AdminLayout from "./UI/AdminLayout";
 
@@ -95,18 +93,16 @@ function App() {
 
           {/* ---------------Admin dashboard Routing ------------------------- */}
 
-          <Route path="/Admin" element={<AdminLayout />}></Route>
-          <Route index element={<DashboardPage />} />
-
-
-          <Route path="/courses" element={<CoursesPage />} />
-          <Route path="/students" element={<StudentsPage />} />
-          <Route path="/instructors" element={<InstructorsPage />} />
-          <Route path="/analytics" element={<AnalyticsPage />} />
-          <Route path="/notifications" element={<NotificationsPage />} />
-          <Route path="/reports" element={<ReportsPage />} />
-          <Route path="/settings" element={<SettingsPage />} />
-
+          <Route path="/Admin" element={<AdminLayout />}>
+            <Route index element={<DashboardPage />} />
+            <Route path="courses" element={<CoursesPage />} />
+            <Route path="students" element={<StudentsPage />} />
+            <Route path="instructors" element={<InstructorsPage />} />
+            <Route path="analytics" element={<AnalyticsPage />} />
+            <Route path="notifications" element={<NotificationsPage />} />
+            <Route path="reports" element={<ReportsPage />} />
+            <Route path="settings" element={<SettingsPage />} />
+          </Route>
         </Routes>
       </div>
     </Router>

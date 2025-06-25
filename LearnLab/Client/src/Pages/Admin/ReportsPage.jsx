@@ -1,11 +1,12 @@
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "../components/Card"
-import { Button } from "../components/Button"
-import { Input } from "../components/Input"
-import { Label } from "../components/Label"
+import { Card, CardContent, CardHeader, CardTitle } from "../../components/Card"
+import { Button } from "../../components/Button"
+import { Input } from "../../components/Input"
+import { Label } from "../../components/Label"
+import React from 'react'
 
-export function ReportsPage() {
-  const [dateRange, setDateRange] = useState({
+const ReportsPage = () => {
+   const [dateRange, setDateRange] = useState({
     startDate: "2024-01-01",
     endDate: "2024-01-31",
   })
@@ -111,3 +112,6 @@ export function ReportsPage() {
     </div>
   )
 }
+
+export default ReportsPage
+

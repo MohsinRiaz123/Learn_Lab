@@ -1,12 +1,13 @@
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "../components/Card"
-import { Button } from "../components/Button"
-import { Input } from "../components/Input"
-import { Label } from "../components/Label"
-import { Textarea } from "../components/Textarea"
-import { Switch } from "../components/Switch"
+import { Card, CardContent, CardHeader, CardTitle } from "../../components/Card"
+import { Button } from "../../components/Button"
+import { Input } from "../../components/Input"
+import { Label } from "../../components/Label"
+import { Textarea } from "../../components/Textarea"
+import { Switch } from "../../components/Switch"
+import React from 'react'
 
-export function SettingsPage() {
+const SettingsPage = () => {
   const [settings, setSettings] = useState({
     siteName: "Learning Platform",
     siteDescription: "A comprehensive online learning platform",
@@ -40,7 +41,7 @@ export function SettingsPage() {
   }
 
   return (
-    <div className="space-y-6">
+   <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-gray-900">System Settings</h1>
         <p className="text-gray-600">Configure your platform settings</p>
@@ -149,3 +150,7 @@ export function SettingsPage() {
     </div>
   )
 }
+
+export default SettingsPage
+
+

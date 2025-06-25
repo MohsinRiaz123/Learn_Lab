@@ -14,14 +14,49 @@ const validationSchema = Yup.object({
     .required("Password is required"),
 });
 
-
 const LoginPage = () => {
-  const navigate =useNavigate()
-const handleLogin = () => {
-  //  add login logic here
-  // navigate("/student");
-  navigate("/instructor");
-};
+  const navigate = useNavigate();
+  const users = [
+    { email: "student@gmail.com", password: "Student123", role: "student" },
+    {
+      email: "instructor@gmail.com",
+      password: "Instructor123",
+      role: "instructor",
+    },
+    {
+      email: "expert@gmail.com",
+      password: "Expert123",
+      role: "industryExpert",
+    },
+    { email: "admin@gmail.com", password: "Admin123", role: "admin" },
+  ];
+  const handleLogin = (values) => {
+    const user = users.find(
+      (u) => u.email === values.email && u.password === values.password
+    );
+
+    if (user) {
+      // Navigate based on role
+      switch (user.role) {
+        case "student":
+          navigate("/student");
+          break;
+        case "instructor":
+          navigate("/instructor");
+          break;
+        case "industryExpert":
+          navigate("/industoryExpert");
+          break;
+        case "admin":
+          navigate("/Admin");
+          break;
+        default:
+          break;
+      }
+    } else {
+      alert("Invalid email or password");
+    }
+  };
   return (
     <div>
       <LandingNavbar />
@@ -46,7 +81,7 @@ const handleLogin = () => {
             initialValues={{ email: "", password: "" }}
             validationSchema={validationSchema}
             onSubmit={(values, { resetForm }) => {
-              console.log("Form submitted:", values);
+              handleLogin(values);
               resetForm();
             }}
           >
@@ -74,7 +109,7 @@ const handleLogin = () => {
                     Password <span className="text-red-500">*</span>
                   </label>
                   <Field
-                    type="text"
+                    type="password"
                     name="password"
                     placeholder="Password"
                     className="w-full p-2 border border-gray-300 rounded-lg  placeholder-gray-400 "
@@ -93,7 +128,6 @@ const handleLogin = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  onClick={handleLogin}
                   className=" w-full shadow-lg shadow-blue hover:shadow-none flex items-center justify-center rounded-full bg-yellow   mt-10 w-fit py-3 font-semibold  hover:bg-purple text-black hover:text-white  transition delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-100 "
                 >
                   {isSubmitting ? "Submitting..." : "Sign In"}
