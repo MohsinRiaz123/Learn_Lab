@@ -80,7 +80,7 @@ export function ProjectsToReview() {
             </div>
             <div className="flex gap-2">
               <button
-                onClick={() => navigate(`/project-evaluation/${project.id}`)}
+                onClick={() => navigate(`/project-details/${project.id}`)}
                 className="flex items-center gap-1 px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50"
               >
                 <MdVisibility className="h-4 w-4" />
