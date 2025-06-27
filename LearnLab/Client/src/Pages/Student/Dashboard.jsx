@@ -13,8 +13,8 @@ import pf from "../../assets/Images/pf.png";
 import instructor from "../../assets/Images/zoya.png";
 import { useNavigate } from "react-router-dom";
 const dashboardStats = [
-  { title: "ENROLLED COURSES", count: 30, icon: <FaBook /> },
-  { title: "ACTIVE COURSES", count: 10, icon: <FaPlayCircle /> },
+  { title: " TOTAL COURSES", count: 17, icon: <FaBook /> },
+  { title: "ENROLLED COURSES", count: 10, icon: <FaPlayCircle /> },
   { title: "COMPLETED COURSES", count: 7, icon: <FaCheckCircle /> },
 ];
 

@@ -5,6 +5,7 @@ import { VscGitPullRequestCreate } from "react-icons/vsc";
 import { FaUser, FaBook, FaStar, FaClipboardList } from "react-icons/fa";
 import { IoLogOut } from "react-icons/io5";
 import { IoSettingsSharp } from "react-icons/io5";
+import { IoStatsChartOutline } from "react-icons/io5";
 import InstructorImage from "../assets/Images/instructor.png";
 import profile from "../assets/Images/zoya.png";
 
@@ -12,12 +13,12 @@ const InstructorDashboardLayout = () => {
   const menu = [
     { name: "Dashboard", path: "/instructor", icon: <FaClipboardList /> },
     { name: "My Profile", path: "/instructor/profile", icon: <FaUser /> },
-    { name: "Enrolled Courses", path: "/instructor/courses", icon: <FaBook /> },
+    // { name: "Assign Courses", path: "/instructor/courses", icon: <FaBook /> },
     { name: "Reviews", path: "/instructor/reviews", icon: <FaStar /> },
     {
-      name: "My Quiz Attempts",
+      name: "Statistics",
       path: "/instructor/quizzes",
-      icon: <FaClipboardList />,
+      icon: <IoStatsChartOutline />,
     },
     {
       name: "Create Course",

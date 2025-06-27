@@ -3,6 +3,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
 import LandingFooter from "../../Components/LandingFooter";
 import LandingNavbar from "../../Components/LandingNavbar";
+import { useNavigate } from "react-router-dom";
 const courses = [
   {
     img: "./src/assets/Images/ITC.png",
@@ -100,19 +101,20 @@ const stats = [
   { value: 42, label: "Award Achieved" },
 ];
 const HomePage = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <LandingNavbar />
       <div className=" space-y-15">
-        <div className=" mx-20 flex justify-around ">
-          <div className="flex flex-col justify-center  space-y-5 p-24 w-1/2">
-            <p className="text-5xl  ">
+        <div className=" mx-20 lg:flex justify-around ">
+          <div className="flex flex-col justify-center  space-y-5 p-24 lg:w-1/2">
+            <p className="text-3xl 2xl:text-5xl  ">
               Never Stop
               <span className="ml-2 p-2 font-bold text-white bg-yellow  rounded-bl-4xl rounded-tr-4xl">
                 Learning
               </span>
             </p>
-            <p className="text-5xl  mt-5">
+            <p className="text-3xl  mt-2 2xl:text-5xl 2xl:mt-5">
               {" "}
               Life <span className="font-bold">Never Stop</span> Teaching
             </p>
@@ -120,14 +122,17 @@ const HomePage = () => {
               Every teaching and learning journey is unique Following <br />{" "}
               We'll help guide your way.
             </p>
-            <button className=" shadow-lg shadow-blue hover:shadow-none flex items-center rounded-full bg-purple w-fit p-4 font-semibold text-white hover:bg-yellow hover:text-black transition delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-100 ">
+            <button
+              onClick={() => navigate("/studentSignup")}
+              className=" shadow-lg shadow-blue hover:shadow-none flex items-center rounded-full bg-purple w-fit p-4 font-semibold text-white hover:bg-yellow hover:text-black transition delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-100 "
+            >
               Start Free Trial{" "}
               <span className="pl-2">
                 <FaArrowRight />
               </span>
             </button>
           </div>
-          <div className=" flex w-1/2 items-center justify-center">
+          <div className=" flex lg:w-1/2 items-center justify-center">
             <img src="./src/assets/Images/Banner.png" alt="image" />
           </div>
         </div>
@@ -142,19 +147,19 @@ const HomePage = () => {
         </div>
         {/* <_____________________Thousands of  Courses____________________> */}
 
-        <div className="flex justify-around ">
-          <div className=" flex w-1/2 items-center justify-center">
+        <div className="lg:flex justify-around ">
+          <div className=" flex lg:w-1/2 items-center justify-center">
             <img src="./src/assets/Images/liveClass.png" alt="image" />
           </div>
-          <div className="flex flex-col justify-center  space-y-3 p-24 font-semibold  w-1/2">
+          <div className="flex flex-col justify-center  space-y-3 p-24 font-semibold  lg:w-1/2">
             <p className="text-purple ml-5">Get More About Us</p>
-            <p className="text-5xl  ">
+            <p className="text-3xl 2xl:text-5xl  ">
               Thousand Of Top
               <span className="ml-2 p-2 font-bold text-white bg-yellow  rounded-bl-4xl rounded-tr-4xl">
                 Courses
               </span>
             </p>
-            <p className="text-5xl  mt-5">Now in One Place</p>
+            <p className="text-3xl 2xl:text-5xl  mt-2 2xl:mt-5">Now in One Place</p>
             <p className="text-gray-400  text-lg mt-5 ">
               Access thousands of high-quality courses in one platform.
               <br /> Learn new skills, grow your career, and explore
@@ -179,7 +184,7 @@ const HomePage = () => {
               <p>Flexible Course Plan</p>
             </div>
 
-            <button className=" shadow-lg shadow-blue hover:shadow-none flex items-center rounded-full bg-purple  mt-4 w-fit p-4 font-semibold text-white hover:bg-yellow hover:text-black transition delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-100 ">
+            <button onClick={()=>navigate("/studentSignup")} className=" shadow-lg shadow-blue hover:shadow-none flex items-center rounded-full bg-purple  mt-4 w-fit p-4 font-semibold text-white hover:bg-yellow hover:text-black transition delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-100 ">
               Start Free Trial{" "}
               <span className="pl-2">
                 <FaArrowRight />
@@ -213,23 +218,23 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className=" absolute top-110 left-0 z-40 flex justify-around w-full px-10">
-            <div className="flex bg-white border border-gray-400 pt-4 rounded-2xl w-[40%]">
+          <div className=" lg:absolute top-110 left-0 z-40 flex justify-around w-full px-10">
+            <div className="lg:flex bg-white border border-gray-400 pt-4 rounded-2xl w-[45%]">
               <img
                 src="./src/assets/Images/instructor.png"
                 alt="instructor image"
                 className="relative pl-2 z-30 "
               />
-              <div className=" absolute top-10 w-45 h-45 rounded-full bg-yellow   "></div>
+              <div className="hidden lg:block absolute top-10 w-45 h-45 rounded-full bg-yellow   "></div>
               <div className="pl-6 space-y-6">
-                <p className="text-3xl font-bold hover:text-yellow">
+                <p className="text-2xl 2xl:text-3xl font-bold hover:text-yellow">
                   Become a Instructor
                 </p>
-                <p className="text-lg font-semibold flex-wrap text-gray-400">
+                <p className="text-md 2xl:text-lg font-semibold flex-wrap text-gray-400">
                   Share your expertise, inspire learners, and grow your teaching
                   career with us
                 </p>
-                <button className=" shadow-lg shadow-blue  hover:shadow-none flex items-center rounded-full bg-purple  mt-4 w-fit p-4 font-semibold text-white hover:bg-yellow hover:text-black transition delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-100 ">
+                <button onClick={()=>navigate("/instructorSignup")} className=" shadow-lg shadow-blue  hover:shadow-none flex items-center rounded-full bg-purple  mt-4 w-fit p-4 font-semibold text-white hover:bg-yellow hover:text-black transition delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-100 ">
                   Apply Now{" "}
                   <span className="pl-2">
                     <FaArrowRight />
@@ -237,22 +242,22 @@ const HomePage = () => {
                 </button>
               </div>
             </div>
-            <div className="flex bg-white border border-gray-400 pt-4 rounded-2xl w-[40%]">
+            <div className="lg:flex bg-white border border-gray-400 pt-4 rounded-2xl w-[45%]">
               <img
                 src="./src/assets/Images/students.png"
                 alt="Student image"
                 className="relative pl-2 z-30 "
               />
-              <div className=" absolute top-10 w-45 h-45 rounded-full bg-yellow   "></div>
+              <div className="hidden lg:block absolute top-10 w-45 h-45 rounded-full bg-yellow   "></div>
               <div className="pl-6 space-y-6">
-                <p className="text-3xl font-bold hover:text-yellow">
+                <p className="text-2xl 2xl:text-3xl font-bold hover:text-yellow">
                   Become a Student
                 </p>
-                <p className="text-lg font-semibold flex-wrap text-gray-400">
+                <p className="text-md 2xl:text-lg font-semibold flex-wrap text-gray-400">
                   Learn from industry experts, gain new skills, and shape your
-                  future with quality education
+                  future
                 </p>
-                <button className=" shadow-lg shadow-blue  hover:shadow-none flex items-center rounded-full bg-purple  mt-4 w-fit p-4 font-semibold text-white hover:bg-yellow hover:text-black transition delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-100 ">
+                <button onClick={()=>navigate("/studentSignup")} className=" shadow-lg shadow-blue  hover:shadow-none flex items-center rounded-full bg-purple  mt-4 w-fit p-4 font-semibold text-white hover:bg-yellow hover:text-black transition delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-100 ">
                   Apply Now{" "}
                   <span className="pl-2">
                     <FaArrowRight />

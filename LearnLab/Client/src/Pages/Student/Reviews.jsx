@@ -1,60 +1,60 @@
-import React, { useState } from 'react';
-import { FaStar, FaTrashAlt, FaEdit } from 'react-icons/fa';
-import { toast, ToastContainer } from 'react-toastify';  // Import toast and ToastContainer
-import 'react-toastify/dist/ReactToastify.css';  // Import the toast styles
+import React, { useState } from "react";
+import { FaStar, FaTrashAlt, FaEdit } from "react-icons/fa";
+import { toast, ToastContainer } from "react-toastify"; // Import toast and ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Import the toast styles
 
 const initialReviews = [
   {
     id: 1,
     course: "The Complete for Beginners",
+    instructor: "Zoya Bilal",
     rating: 5,
-    totalReviews: 3,
-    feedback: "Good"
+    feedback: "Good",
   },
   {
     id: 2,
     course: "The Complete Graphic Design for Beginners",
+    instructor: "Bob",
     rating: 4,
-    totalReviews: 3,
-    feedback: "Great!"
+    feedback: "Great!",
   },
   {
     id: 3,
     course: "Graphic Design for Beginners",
+    instructor: "Alice",
     rating: 3,
-    totalReviews: 3,
-    feedback: "Average"
+    feedback: "Average",
   },
   {
     id: 4,
     course: "The Complete Graphic Design",
+    instructor: "Harry",
     rating: 5,
-    totalReviews: 3,
-    feedback: "Good"
+    feedback: "Good",
   },
   {
     id: 5,
     course: "The Design for Beginners",
+    instructor: "Zoya Bilal",
     rating: 4,
-    totalReviews: 3,
-    feedback: "Great!"
+    feedback: "Great!",
   },
   {
     id: 6,
     course: "The Complete Graphic for Beginners",
+    instructor: "Bob",
     rating: 3,
-    totalReviews: 3,
-    feedback: "Average"
+    feedback: "Average",
   },
 ];
 
 const Reviews = () => {
   const [reviews, setReviews] = useState(initialReviews);
   const [editingId, setEditingId] = useState(null);
-  const [editFeedback, setEditFeedback] = useState('');
+  const [editFeedback, setEditFeedback] = useState("");
   const [editRating, setEditRating] = useState(0);
-  const [showModal, setShowModal] = useState(false);  // Modal visibility state
-  const [deleteId, setDeleteId] = useState(null);  // Store the id of the review to delete
+  const [showModal, setShowModal] = useState(false); // Modal visibility state
+  const [deleteId, setDeleteId] = useState(null); // Store the id of the review to delete
 
   // Start editing
   const handleEdit = (review) => {
@@ -72,30 +72,30 @@ const Reviews = () => {
           : review
       )
     );
-    toast.success("Review saved successfully!");  // Success toast
+    toast.success("Review saved successfully!"); // Success toast
     setEditingId(null);
-    setEditFeedback('');
+    setEditFeedback("");
     setEditRating(0);
   };
 
   // Show the delete confirmation modal
   const handleDeleteClick = (id) => {
     setDeleteId(id);
-    setShowModal(true);  // Show the modal
+    setShowModal(true); // Show the modal
   };
 
   // Delete review
   const handleDelete = () => {
     setReviews((prev) => prev.filter((review) => review.id !== deleteId));
-    toast.success("Review deleted successfully!");  // Success toast
-    setShowModal(false);  // Close the modal
-    setDeleteId(null);  // Reset deleteId
+    toast.success("Review deleted successfully!"); // Success toast
+    setShowModal(false); // Close the modal
+    setDeleteId(null); // Reset deleteId
   };
 
   // Cancel delete
   const handleCancelDelete = () => {
-    setShowModal(false);  // Close the modal without deleting
-    setDeleteId(null);  // Reset deleteId
+    setShowModal(false); // Close the modal without deleting
+    setDeleteId(null); // Reset deleteId
   };
 
   return (
@@ -106,16 +106,20 @@ const Reviews = () => {
         <table className="min-w-full bg-white">
           <thead>
             <tr className="bg-gray-100 text-left text-gray-600 text-sm uppercase">
-              <th className="py-3 px-6">Course</th>
+              <th className="py-3 px-6">Course & Instructor</th>
               <th className="py-3 px-6">Feedback</th>
               <th className="py-3 px-6 text-center">Actions</th>
             </tr>
           </thead>
           <tbody>
             {reviews.map((review, idx) => (
-              <tr key={review.id} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                <td className="py-4 px-6 text-sm font-medium text-gray-900">
-                  {review.course}
+              <tr
+                key={review.id}
+                className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}
+              >
+                <td className="py-4 px-6 text-sm font-medium text-gray-900 ">
+                  <span>{review.course}</span>
+                  <span className="flex " >  <p className="font-bold mr-2">Instructor:</p> {review.instructor}</span>
                 </td>
                 <td className="py-4 px-6 text-sm text-gray-700">
                   {editingId === review.id ? (
@@ -125,7 +129,11 @@ const Reviews = () => {
                           <FaStar
                             key={num}
                             onClick={() => setEditRating(num)}
-                            className={`cursor-pointer ${num <= editRating ? 'text-yellow-500' : 'text-gray-300'}`}
+                            className={`cursor-pointer ${
+                              num <= editRating
+                                ? "text-yellow-500"
+                                : "text-gray-300"
+                            }`}
                           />
                         ))}
                       </div>
@@ -141,7 +149,6 @@ const Reviews = () => {
                         {[...Array(review.rating)].map((_, i) => (
                           <FaStar key={i} />
                         ))}
-                        <span className="text-gray-600 ml-2">({review.totalReviews} Reviews)</span>
                       </div>
                       <div className="text-gray-700">{review.feedback}</div>
                     </>
@@ -194,7 +201,9 @@ const Reviews = () => {
       {showModal && (
         <div className="fixed inset-0 backdrop-blur-xs flex justify-center items-center z-50 ">
           <div className="bg-white p-6 rounded-xl shadow-lg w-1/3 border border-purple">
-            <h3 className="text-lg font-semibold mb-4">Are you sure you want to delete this review?</h3>
+            <h3 className="text-lg font-semibold mb-4">
+              Are you sure you want to delete this review?
+            </h3>
             <div className="flex justify-around">
               <button
                 onClick={handleCancelDelete}

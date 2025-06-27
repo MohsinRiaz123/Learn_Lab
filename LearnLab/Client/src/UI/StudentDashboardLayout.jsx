@@ -6,18 +6,20 @@ import { IoLogOut } from "react-icons/io5";
 import { IoSettingsSharp } from "react-icons/io5";
 import StudentImage from "../assets/Images/students.png";
 import profile from "../assets/Images/haider.png";
-
+import { MdGroups } from "react-icons/md";
 const StudentDashboardLayout = () => {
   const menu = [
     { name: "Dashboard", path: "/student", icon: <FaClipboardList /> },
     { name: "My Profile", path: "/student/profile", icon: <FaUser /> },
     { name: "Enrolled Courses", path: "/student/courses", icon: <FaBook /> },
     { name: "Reviews", path: "/student/reviews", icon: <FaStar /> },
+  
     {
       name: "My Quiz Attempts",
       path: "/student/quizzes",
       icon: <FaClipboardList />,
     },
+  { name: "Mentors", path: "/student/mentors", icon: <MdGroups  /> }
   ];
   const opration = [
     { name: "Setting", path: "/student/setting", icon: <  IoSettingsSharp /> },

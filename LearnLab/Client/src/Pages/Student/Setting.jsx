@@ -4,29 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Setting = () => {
-  const [activeTab, setActiveTab] = useState("Personal Info");
-  const [passwordVisibility, setPasswordVisibility] = useState({
-    current: false,
-    new: false,
-    confirm: false,
-  });
-
-  const togglePasswordVisibility = (field) => {
-    setPasswordVisibility((prev) => ({
-      ...prev,
-      [field]: !prev[field],
-    }));
-  };
-
-  const [profileImage, setProfileImage] = useState(null);
-
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setProfileImage(imageUrl);
-    }
-  };
+ 
 
   const [profile, setProfile] = useState({
     registrationDate: "February 28, 2026 8:01 am",
@@ -50,6 +28,30 @@ const Setting = () => {
     linkedin: "gfyswghjegmail.com",
     github: "mlcnkfgmail.com",
   });
+
+   const [activeTab, setActiveTab] = useState("Personal Info");
+  const [passwordVisibility, setPasswordVisibility] = useState({
+    current: false,
+    new: false,
+    confirm: false,
+  });
+
+  const togglePasswordVisibility = (field) => {
+    setPasswordVisibility((prev) => ({
+      ...prev,
+      [field]: !prev[field],
+    }));
+  };
+
+  const [profileImage, setProfileImage] = useState(null);
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setProfileImage(imageUrl);
+    }
+  };
 
   const handleChange = (setter, field, value) => {
     setter((prev) => ({ ...prev, [field]: value }));

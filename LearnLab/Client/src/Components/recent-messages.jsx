@@ -67,6 +67,12 @@ export function RecentMessages() {
         ))}
       </div>
       <div className="p-6 border-t">
+        <Link to="/industoryExpert/messages" className="w-full">
+          <button className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">
+            Open Messages
+          </button>
+        </Link>
+
         <button
           onClick={() => navigate("/messages")}
           className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors"

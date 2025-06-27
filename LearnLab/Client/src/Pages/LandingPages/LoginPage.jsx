@@ -39,7 +39,7 @@ const LoginPage = () => {
       // Navigate based on role
       switch (user.role) {
         case "student":
-          navigate("/student");
+          navigate("/payment");
           break;
         case "instructor":
           navigate("/instructor");

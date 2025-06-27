@@ -4,20 +4,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Setting = () => {
-  const [activeTab, setActiveTab] = useState("Personal Info");
-  const [passwordVisibility, setPasswordVisibility] = useState({
-    current: false,
-    new: false,
-    confirm: false,
-  });
-
-  const togglePasswordVisibility = (field) => {
-    setPasswordVisibility((prev) => ({
-      ...prev,
-      [field]: !prev[field],
-    }));
-  };
-
   const [profile, setProfile] = useState({
     registrationDate: "February 28, 2026 8:01 am",
     firstName: "Zoya",
@@ -41,6 +27,29 @@ const Setting = () => {
     github: "mlcnkfgmail.com",
   });
 
+  const [activeTab, setActiveTab] = useState("Personal Info");
+  const [passwordVisibility, setPasswordVisibility] = useState({
+    current: false,
+    new: false,
+    confirm: false,
+  });
+
+  const togglePasswordVisibility = (field) => {
+    setPasswordVisibility((prev) => ({
+      ...prev,
+      [field]: !prev[field],
+    }));
+  };
+
+  const [profileImage, setProfileImage] = useState(null);
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setProfileImage(imageUrl);
+    }
+  };
   const handleChange = (setter, field, value) => {
     setter((prev) => ({ ...prev, [field]: value }));
   };
@@ -63,6 +72,40 @@ const Setting = () => {
 
   const renderPersonalInfo = () => (
     <div className="space-y-6">
+      {/* Profile Image Upload */}
+      <div className="flex items-center space-x-4">
+        <div className="w-20 h-20 rounded-full overflow-hidden border">
+          <img
+            src={
+              profileImage ||
+              "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
+            }
+            alt="Profile"
+            className="object-cover w-full h-full"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Profile Picture
+          </label>
+
+          <button
+            type="button"
+            onClick={() => document.getElementById("imageUpload").click()}
+            className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 text-sm"
+          >
+            Upload Image
+          </button>
+
+          <input
+            id="imageUpload"
+            type="file"
+            accept="image/*"
+            onChange={handleImageUpload}
+            className="hidden"
+          />
+        </div>
+      </div>
       {[
         { label: "First Name", field: "firstName", type: "text" },
         { label: "Last Name", field: "lastName", type: "text" },

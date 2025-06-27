@@ -115,12 +115,7 @@ const AboutUS = () => {
                 <p>Flexible Course Plan</p>
               </div>
             </div>
-            <button className=" shadow-lg shadow-blue hover:shadow-none flex items-center rounded-full bg-purple  mt-4 w-fit p-4 font-semibold text-white hover:bg-yellow hover:text-black transition delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-100 ">
-              Start Free Trial{" "}
-              <span className="pl-2">
-                <FaArrowRight />
-              </span>
-            </button>
+           
           </div>
         </div>
         {/* <_____________________How We Start____________________> */}

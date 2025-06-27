@@ -10,7 +10,9 @@ import ForgotPassword from "./Pages/LandingPages/ForgotPassword";
 import StudentDashboardLayout from "./UI/StudentDashboardLayout";
 import StudentDashboard from "./Pages/Student/Dashboard";
 import MyProfile from "./Pages/Student/Profile";
+import Mentors from "./Pages/Student/Mentors";
 import CourseDetail from "./Pages/Student/CourseDetailes";
+import Subscripiont from "./Pages/Student/BuySubscriptionPage";
 import Learning from "./Pages/Student/LearningScreen";
 import DashboardPage from "./Pages/Admin/DashboardPage";
 import CoursesPage from "./Pages/Admin/CoursesPage";
@@ -28,13 +30,16 @@ import Setting from "./Pages/Student/Setting";
 import InstructorDashboardLayout from "./UI/InstructorDashboardLayout";
 import InsDashboard from "./Pages/Instructor/Dashboard";
 import InsMyProfile from "./Pages/Instructor/Profile";
+import CourseCreation from "./Pages/Instructor/CourseCreation";
+import InsCourseDetails from "./Pages/Instructor/InsCourseDetails";
+import GenralCourseDetails from "./Pages/Instructor/GenralCourseDetails";
 import InsReviews from "./Pages/Instructor/Reviews";
 import InsQuizAttempts from "./Pages/Instructor/QuizAttempt";
 import InsEnrolledCourses from "./Pages/Instructor/EnrolledCourses";
 import InsSetting from "./Pages/Instructor/Setting";
 import CreateCourse from "./Pages/Instructor/CreateCourse";
 import Dashboard from "./Pages/Industryexpert/Dashboard";
-import ProjectDetails from "./Pages/Industryexpert/ProjectDetails"
+import ProjectDetails from "./Pages/Industryexpert/ProjectDetails";
 import Profile from "./Pages/Industryexpert/Profile";
 import Projects from "./Pages/Industryexpert/Projects";
 import Messages from "./Pages/Industryexpert/Messages";
@@ -51,6 +56,8 @@ function App() {
     <Router>
       <div className="font-montserrat">
         <Routes>
+          <Route path="/payment" element={<Subscripiont />} />
+
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/studentSignup" element={<StudentSignup />} />
@@ -68,8 +75,9 @@ function App() {
             <Route path="quizzes" element={<QuizAttempts />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="setting" element={<Setting />} />
-            <Route path="course" element={<CourseDetail/>} />
+            <Route path="course" element={<CourseDetail />} />
             <Route path="learning" element={<Learning />} />
+            <Route path="mentors" element={<Mentors />} />
           </Route>
 
           {/* ---------------Instructor dashboard Routing ------------------------- */}
@@ -80,6 +88,12 @@ function App() {
             <Route path="courses" element={<InsEnrolledCourses />} />
             <Route path="quizzes" element={<InsQuizAttempts />} />
             <Route path="reviews" element={<InsReviews />} />
+            <Route path="courseCreation" element={<CourseCreation />} />
+            <Route path="InsCourseDetails" element={<InsCourseDetails />} />
+            <Route
+              path="GenralCourseDetails"
+              element={<GenralCourseDetails />}
+            />
             <Route path="setting" element={<InsSetting />} />
             <Route path="createCourse" element={<CreateCourse />} />
           </Route>
@@ -89,7 +103,10 @@ function App() {
           <Route path="/industoryExpert" element={<IndustoryExpertLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="profile" element={<Profile />} />
-			Route path="/industryexpert/project/:id" element={<ProjectDetails />} />
+            <Route
+              path="project/:id"
+              element={<ProjectDetails />}
+            />
             <Route path="projects" element={<Projects />} />
             <Route path="messages" element={<Messages />} />
             <Route path="courses" element={<Courses />} />
@@ -101,7 +118,10 @@ function App() {
           {/* ---------------Admin dashboard Routing ------------------------- */}
 
           <Route path="/Admin" element={<AdminLayout />}>
-		  <Route path="/admin/instructor/:id" element={<InstructorProfile />} />
+            <Route
+              path="instructor/:id"
+              element={<InstructorProfile />}
+            />
             <Route index element={<DashboardPage />} />
             <Route path="courses" element={<CoursesPage />} />
             <Route path="students" element={<StudentsPage />} />
