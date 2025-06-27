@@ -1,6 +1,9 @@
 import { MdEdit, MdVisibility } from "react-icons/md"
+import { useNavigate } from "react-router-dom"
 
 export function ProjectsToReview() {
+  const navigate = useNavigate()
+
   const projects = [
     {
       id: 1,
@@ -76,11 +79,17 @@ export function ProjectsToReview() {
               </div>
             </div>
             <div className="flex gap-2">
-              <button className="flex items-center gap-1 px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50">
+              <button
+                onClick={() => navigate(`/project-evaluation/${project.id}`)}
+                className="flex items-center gap-1 px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50"
+              >
                 <MdVisibility className="h-4 w-4" />
                 View
               </button>
-              <button className="flex items-center gap-1 px-3 py-1 text-sm bg-indigo-600 text-white rounded hover:bg-indigo-700">
+              <button
+                onClick={() => navigate(`/project-evaluation/${project.id}`)}
+                className="flex items-center gap-1 px-3 py-1 text-sm bg-indigo-600 text-white rounded hover:bg-indigo-700"
+              >
                 <MdEdit className="h-4 w-4" />
                 Evaluate
               </button>
