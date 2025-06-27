@@ -82,7 +82,7 @@ const AboutUS = () => {
           </div>
           <div className="flex flex-col justify-center   p-24 font-semibold  w-1/2">
             <p className="text-purple ml-5">Get More About Us</p>
-            <p className="text-5xl py-2">
+            <p className="text-2xl 2xl:text-5xl py-2">
               Empowering Students to reach their
               <span className=" text-4xl mx-2 font-bold text-white bg-yellow rounded-bl-4xl rounded-tr-4xl px-3 py-1 ">
                 potential
