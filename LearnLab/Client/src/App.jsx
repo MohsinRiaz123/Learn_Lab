@@ -19,6 +19,7 @@ import InstructorsPage from "./Pages/Admin/InstructorsPage";
 import AnalyticsPage from "./Pages/Admin/AnalyticsPage";
 import NotificationsPage from "./Pages/Admin/NotificationsPage";
 import ReportsPage from "./Pages/Admin/ReportsPage";
+import InstructorProfile from "./Pages/Admin/InstructorProfile";
 import SettingsPage from "./Pages/Admin/SettingsPage";
 import Reviews from "./Pages/Student/Reviews";
 import QuizAttempts from "./Pages/Student/QuizAttempt";
@@ -33,6 +34,7 @@ import InsEnrolledCourses from "./Pages/Instructor/EnrolledCourses";
 import InsSetting from "./Pages/Instructor/Setting";
 import CreateCourse from "./Pages/Instructor/CreateCourse";
 import Dashboard from "./Pages/Industryexpert/Dashboard";
+import ProjectDetails from "./Pages/Industryexpert/ProjectDetails"
 import Profile from "./Pages/Industryexpert/Profile";
 import Projects from "./Pages/Industryexpert/Projects";
 import Messages from "./Pages/Industryexpert/Messages";
@@ -87,6 +89,7 @@ function App() {
           <Route path="/industoryExpert" element={<IndustoryExpertLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="profile" element={<Profile />} />
+			Route path="/industryexpert/project/:id" element={<ProjectDetails />} />
             <Route path="projects" element={<Projects />} />
             <Route path="messages" element={<Messages />} />
             <Route path="courses" element={<Courses />} />
@@ -98,6 +101,7 @@ function App() {
           {/* ---------------Admin dashboard Routing ------------------------- */}
 
           <Route path="/Admin" element={<AdminLayout />}>
+		  <Route path="/admin/instructor/:id" element={<InstructorProfile />} />
             <Route index element={<DashboardPage />} />
             <Route path="courses" element={<CoursesPage />} />
             <Route path="students" element={<StudentsPage />} />
